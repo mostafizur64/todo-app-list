@@ -23,7 +23,7 @@ function App() {
         </Content>
       </Layout>
     </Provider>
-  );
+  ); 
 }
 
 export default App;
