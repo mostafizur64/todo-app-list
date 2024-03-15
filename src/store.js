@@ -9,7 +9,7 @@ const loadState = () => {
     }
     return JSON.parse(serializedState);
   } catch (err) {
-    return undefined; 
+    return undefined;  
   }
 };
 
