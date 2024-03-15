@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Provider } from "react-redux";
+import { Layout, Typography } from "antd";
+import store from "./store";
+import TaskForm from "./components/TaskForm";
+import TaskList from "./components/TaskList";
+
+const { Header, Content } = Layout;
+const { Title } = Typography;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <Layout >
+        <Header className="text">
+          <Title style={{ color: "white", }}>
+            Todo List App
+          </Title>
+        </Header>
+        <Content style={{ padding: "50px" }}>
+          <TaskForm />
+          <TaskList />
+        </Content>
+      </Layout>
+    </Provider>
   );
 }
 
